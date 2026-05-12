@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://jj4hf5jcnjxj"]
 
 [ext_resource type="Texture2D" uid="uid://blw1mtgak0xwb" path="res://Pixel Adventure 1/Free/Background/Blue.png" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://csktlgx6fx0vn" path="res://node_2d.gd" id="1_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://bslv72l0rwkwi" path="res://Pixel Adventure 1/Free/Terrain/Terrain (16x16).png" id="2_epypp"]
 [ext_resource type="Script" uid="uid://c58pgmlfocw4v" path="res://character_body_2d.gd" id="3_0hol4"]
 [ext_resource type="Texture2D" uid="uid://bo7kgvaqrc7b3" path="res://Pixel Adventure 1/Free/Main Characters/Ninja Frog/Idle (32x32).png" id="4_q6r6c"]
@@ -10,7 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://uttg2x5g2r5y" path="res://Pixel Adventure 1/Free/Main Characters/Virtual Guy/Idle (32x32).png" id="8_rj586"]
 [ext_resource type="Texture2D" uid="uid://biubw0wjw8il8" path="res://Pixel Adventure 1/Free/Main Characters/Mask Dude/Idle (32x32).png" id="9_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://2i6vdi7roi87" path="res://Pixel Adventure 1/Free/Main Characters/Mask Dude/Run (32x32).png" id="10_ir8iy"]
-[ext_resource type="AudioStream" uid="uid://3wbva4dc21bf" path="res://musica/Heavy_Metal_Teeth.mp3" id="11_hqns4"]
+[ext_resource type="AudioStream" uid="uid://bl3c1c72nwkbq" path="res://musica/Heavy_Metal_Teeth.mp3" id="11_hqns4"]
+[ext_resource type="PackedScene" uid="uid://c4dj7s4x4wkj1" path="res://pausa.tscn" id="12_x0ka3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hol4"]
 texture = ExtResource("2_epypp")
@@ -532,7 +534,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_4qosj")
 }],
 "loop": true,
-"name": &"saltar",
+"name": &"salto",
 "speed": 14.0
 }]
 
@@ -821,6 +823,7 @@ size = Vector2(20, 26)
 
 [node name="Node2D" type="Node2D" unique_id=1063954120]
 position = Vector2(0, -1)
+script = ExtResource("1_0h7mo")
 
 [node name="Respawn_player1" type="Marker2D" parent="." unique_id=1044358798]
 position = Vector2(48, -124)
@@ -850,17 +853,20 @@ shape = SubResource("RectangleShape2D_0hol4")
 
 [node name="player2" type="CharacterBody2D" parent="." unique_id=594772474]
 script = ExtResource("3_0hol4")
+player_id = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player2" unique_id=1104291299]
 position = Vector2(360, 229)
 sprite_frames = SubResource("SpriteFrames_lbrxf")
-animation = &"saltar"
+animation = &"salto"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player2" unique_id=1313297211]
 position = Vector2(360.5, 232)
 shape = SubResource("RectangleShape2D_cjlbh")
 
 [node name="player3" type="CharacterBody2D" parent="." unique_id=1845409733]
+script = ExtResource("3_0hol4")
+player_id = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player3" unique_id=1568058167]
 position = Vector2(826, 254)
@@ -872,6 +878,8 @@ position = Vector2(826, 258)
 shape = SubResource("RectangleShape2D_wqmsq")
 
 [node name="player4" type="CharacterBody2D" parent="." unique_id=1158527069]
+script = ExtResource("3_0hol4")
+player_id = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player4" unique_id=1675344580]
 position = Vector2(455, 255)
@@ -887,3 +895,7 @@ stream = ExtResource("11_hqns4")
 volume_db = -4.0
 autoplay = true
 parameters/looping = true
+
+[node name="CanvasLayer" parent="." unique_id=939217709 instance=ExtResource("12_x0ka3")]
+offset = Vector2(500, 30)
+transform = Transform2D(1, 0, 0, 1, 500, 30)

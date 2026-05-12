@@ -3,6 +3,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+@export var player_id: int = 1
+
 @onready var anim = $AnimatedSprite2D
 @onready var respawn_point = $"../Respawn_player1"
 
@@ -13,28 +15,24 @@ func _ready() -> void:
 	current_respawn_position = respawn_point.global_position
 
 func _physics_process(delta: float) -> void:
-	# Gravedad
+	var accion_izquierda = "p%d_izquierda" % player_id
+	var accion_derecha = "p%d_derecha" % player_id
+	var accion_salto = "p%d_salto" % player_id
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Salto
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed(accion_salto) and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Movimiento izquierda/derecha
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis(accion_izquierda, accion_derecha)
 
 	if direction != 0:
 		velocity.x = direction * SPEED
-
-		if direction < 0:
-			anim.flip_h = true
-		elif direction > 0:
-			anim.flip_h = false
+		anim.flip_h = direction < 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	# Animaciones
 	if not is_on_floor():
 		if anim.animation != "salto":
 			anim.play("salto")
@@ -47,7 +45,6 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	# Respawn al caer fuera del mapa
 	if global_position.y > 750:
 		respawn()
 

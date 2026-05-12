@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c4dj7s4x4wkj1"]
+
+[ext_resource type="Script" uid="uid://cs1seijrs6afo" path="res://pausa.gd" id="1_wk6u8"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=939217709]
+script = ExtResource("1_wk6u8")
+
+[node name="PanelPausa" type="PanelContainer" parent="." unique_id=1539152011]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelPausa" unique_id=1372768]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelPausa/VBoxContainer" unique_id=2083140351]
+layout_mode = 2
+text = "PAUSA"
+
+[node name="BtnReanudar" type="Button" parent="PanelPausa/VBoxContainer" unique_id=2069031150]
+layout_mode = 2
+text = "Reanudar"
+
+[node name="BtnMenu" type="Button" parent="PanelPausa/VBoxContainer" unique_id=137756480]
+layout_mode = 2
+text = "Menú Principal"
+
+[node name="BtnPantalla" type="Button" parent="PanelPausa/VBoxContainer" unique_id=1407429228]
+layout_mode = 2
+text = "Pantalla Completa"
+
+[connection signal="pressed" from="PanelPausa/VBoxContainer/BtnReanudar" to="." method="_on_btn_reanudar_pressed"]
+[connection signal="pressed" from="PanelPausa/VBoxContainer/BtnMenu" to="." method="_on_btn_menu_pressed"]
+[connection signal="pressed" from="PanelPausa/VBoxContainer/BtnPantalla" to="." method="_on_btn_pantalla_pressed"]

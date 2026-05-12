@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c1s4s2868mldx"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=661080780]
+
+[node name="BarraVidas" type="HBoxContainer" parent="." unique_id=342247421]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HUDPlayer1" type="HBoxContainer" parent="BarraVidas" unique_id=615318707]
+layout_mode = 2
+
+[node name="CaraP1" type="TextureRect" parent="BarraVidas/HUDPlayer1" unique_id=802637149]
+layout_mode = 2
+
+[node name="VidasP1" type="Label" parent="BarraVidas/HUDPlayer1" unique_id=1462609021]
+layout_mode = 2
+
+[node name="HUDPlayer2" type="HBoxContainer" parent="BarraVidas" unique_id=1102588449]
+layout_mode = 2
+
+[node name="Cara2" type="TextureRect" parent="BarraVidas/HUDPlayer2" unique_id=968480956]
+layout_mode = 2
+
+[node name="VidasP2" type="Label" parent="BarraVidas/HUDPlayer2" unique_id=1001508566]
+layout_mode = 2
+
+[node name="HUDPlayer3" type="HBoxContainer" parent="BarraVidas" unique_id=1578202804]
+layout_mode = 2
+
+[node name="Cara3" type="TextureRect" parent="BarraVidas/HUDPlayer3" unique_id=130523501]
+layout_mode = 2
+
+[node name="VidasP3" type="Label" parent="BarraVidas/HUDPlayer3" unique_id=1608266334]
+layout_mode = 2
+
+[node name="HUDPlayer4" type="HBoxContainer" parent="BarraVidas" unique_id=416942634]
+layout_mode = 2
+
+[node name="Cara4" type="TextureRect" parent="BarraVidas/HUDPlayer4" unique_id=165314747]
+layout_mode = 2
+
+[node name="VidasP4" type="Label" parent="BarraVidas/HUDPlayer4" unique_id=989016484]
+layout_mode = 2
