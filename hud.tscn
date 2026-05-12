@@ -1,43 +1,76 @@
 [gd_scene format=3 uid="uid://c1s4s2868mldx"]
 
+[ext_resource type="Texture2D" uid="uid://bm0njsp4pvjdo" path="res://Pixel Adventure 1/Free/Main Characters/Ninja Frog/Fall (32x32).png" id="1_37p78"]
+[ext_resource type="Script" uid="uid://ch3c28f42nm7n" path="res://hud.gd" id="1_a2258"]
+[ext_resource type="Texture2D" uid="uid://blcruacn7a0bv" path="res://Pixel Adventure 1/Free/Main Characters/Pink Man/Fall (32x32).png" id="2_64ctp"]
+[ext_resource type="Texture2D" uid="uid://damfh6eyif5e3" path="res://Pixel Adventure 1/Free/Main Characters/Virtual Guy/Jump (32x32).png" id="3_8sq4i"]
+[ext_resource type="Texture2D" uid="uid://7khlbyvoy0b" path="res://Pixel Adventure 1/Free/Main Characters/Mask Dude/Jump (32x32).png" id="4_640wx"]
+
 [node name="CanvasLayer" type="CanvasLayer" unique_id=661080780]
+script = ExtResource("1_a2258")
 
 [node name="BarraVidas" type="HBoxContainer" parent="." unique_id=342247421]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_right = 96.0
+offset_bottom = 32.0
+grow_horizontal = 2
+alignment = 1
 
 [node name="HUDPlayer1" type="HBoxContainer" parent="BarraVidas" unique_id=615318707]
 layout_mode = 2
 
 [node name="CaraP1" type="TextureRect" parent="BarraVidas/HUDPlayer1" unique_id=802637149]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+texture = ExtResource("1_37p78")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="VidasP1" type="Label" parent="BarraVidas/HUDPlayer1" unique_id=1462609021]
 layout_mode = 2
+text = "3"
 
 [node name="HUDPlayer2" type="HBoxContainer" parent="BarraVidas" unique_id=1102588449]
 layout_mode = 2
 
 [node name="Cara2" type="TextureRect" parent="BarraVidas/HUDPlayer2" unique_id=968480956]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+texture = ExtResource("2_64ctp")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="VidasP2" type="Label" parent="BarraVidas/HUDPlayer2" unique_id=1001508566]
 layout_mode = 2
+text = "3"
 
 [node name="HUDPlayer3" type="HBoxContainer" parent="BarraVidas" unique_id=1578202804]
 layout_mode = 2
 
 [node name="Cara3" type="TextureRect" parent="BarraVidas/HUDPlayer3" unique_id=130523501]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+texture = ExtResource("3_8sq4i")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="VidasP3" type="Label" parent="BarraVidas/HUDPlayer3" unique_id=1608266334]
 layout_mode = 2
+text = "3"
 
 [node name="HUDPlayer4" type="HBoxContainer" parent="BarraVidas" unique_id=416942634]
 layout_mode = 2
 
 [node name="Cara4" type="TextureRect" parent="BarraVidas/HUDPlayer4" unique_id=165314747]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+texture = ExtResource("4_640wx")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="VidasP4" type="Label" parent="BarraVidas/HUDPlayer4" unique_id=989016484]
 layout_mode = 2
+text = "3"

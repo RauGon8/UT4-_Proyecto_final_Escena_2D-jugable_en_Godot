@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://2i6vdi7roi87" path="res://Pixel Adventure 1/Free/Main Characters/Mask Dude/Run (32x32).png" id="10_ir8iy"]
 [ext_resource type="AudioStream" uid="uid://bl3c1c72nwkbq" path="res://musica/Heavy_Metal_Teeth.mp3" id="11_hqns4"]
 [ext_resource type="PackedScene" uid="uid://c4dj7s4x4wkj1" path="res://pausa.tscn" id="12_x0ka3"]
+[ext_resource type="PackedScene" uid="uid://c1s4s2868mldx" path="res://hud.tscn" id="14_nr8wp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hol4"]
 texture = ExtResource("2_epypp")
@@ -632,7 +633,7 @@ animations = [{
 }, {
 "frames": [],
 "loop": true,
-"name": &"saltar",
+"name": &"salto",
 "speed": 5.0
 }]
 
@@ -814,7 +815,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_0fsb4")
 }],
 "loop": true,
-"name": &"saltar",
+"name": &"salto",
 "speed": 5.0
 }]
 
@@ -871,7 +872,7 @@ player_id = 3
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player3" unique_id=1568058167]
 position = Vector2(826, 254)
 sprite_frames = SubResource("SpriteFrames_m7xe6")
-animation = &"idle"
+animation = &"salto"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player3" unique_id=2133477987]
 position = Vector2(826, 258)
@@ -884,7 +885,7 @@ player_id = 4
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player4" unique_id=1675344580]
 position = Vector2(455, 255)
 sprite_frames = SubResource("SpriteFrames_5fipt")
-animation = &"saltar"
+animation = &"salto"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player4" unique_id=317717390]
 position = Vector2(456, 257)
@@ -899,3 +900,5 @@ parameters/looping = true
 [node name="CanvasLayer" parent="." unique_id=939217709 instance=ExtResource("12_x0ka3")]
 offset = Vector2(500, 30)
 transform = Transform2D(1, 0, 0, 1, 500, 30)
+
+[node name="CanvasLayer2" parent="." unique_id=661080780 instance=ExtResource("14_nr8wp")]

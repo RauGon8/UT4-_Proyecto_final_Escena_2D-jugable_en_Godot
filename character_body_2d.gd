@@ -9,6 +9,7 @@ const JUMP_VELOCITY = -400.0
 @onready var respawn_point = $"../Respawn_player1"
 
 var current_respawn_position: Vector2
+var vidas: int = 3
 
 func _ready() -> void:
 	global_position = respawn_point.global_position
@@ -46,8 +47,16 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	if global_position.y > 750:
-		respawn()
+		perder_vida()
 
-func respawn() -> void:
+func perder_vida() -> void:
+	vidas -= 1
 	global_position = current_respawn_position
 	velocity = Vector2.ZERO
+	
+	var hud = get_tree().get_first_node_in_group("hud")
+	if hud:
+		hud.actualizar_vidas(player_id, vidas)
+	
+	if vidas <= 0:
+		queue_free()
