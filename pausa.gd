@@ -7,7 +7,6 @@ extends CanvasLayer
 
 func _ready() -> void:
 	panel_pausa.hide()
-	# El nodo de pausa no se pausa él mismo
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _input(event: InputEvent) -> void:
@@ -17,7 +16,6 @@ func _input(event: InputEvent) -> void:
 func _toggle_pausa() -> void:
 	var pausado = not get_tree().paused
 	get_tree().paused = pausado
-
 	if pausado:
 		panel_pausa.show()
 	else:
@@ -29,10 +27,3 @@ func _on_btn_reanudar_pressed() -> void:
 func _on_btn_menu_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://menu.tscn")
-
-
-func _on_btn_pantalla_pressed() -> void:
-	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)

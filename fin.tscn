@@ -5,14 +5,17 @@
 [node name="Control" type="Control" unique_id=1740264462]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 12.0
+offset_top = 10.0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_7gwgi")
 
 [node name="Contenedor" type="VBoxContainer" parent="." unique_id=1715746099]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 350.0
+offset_right = 780.0
+offset_bottom = 93.0
 
 [node name="LabelGanador" type="Label" parent="Contenedor" unique_id=998806912]
 layout_mode = 2

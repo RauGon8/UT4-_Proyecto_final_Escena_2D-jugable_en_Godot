@@ -1,14 +1,12 @@
 [gd_scene format=3 uid="uid://bg4vqx0j5k1xo"]
 
 [ext_resource type="Script" uid="uid://c1o6vg6e6wg7d" path="res://caja.gd" id="1_a7ipy"]
-[ext_resource type="PackedScene" uid="uid://dl5p18e45dil" path="res://ventilador.tscn" id="2_43avb"]
 [ext_resource type="Texture2D" uid="uid://dlul0mvk1i8br" path="res://Pixel Adventure 1/Free/Items/Boxes/Box3/Idle.png" id="3_qfw4h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a7ipy"]
 
 [node name="caja" type="RigidBody2D" unique_id=26749888]
 script = ExtResource("1_a7ipy")
-ventilador_scene = ExtResource("2_43avb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=55109006]
 texture = ExtResource("3_qfw4h")
