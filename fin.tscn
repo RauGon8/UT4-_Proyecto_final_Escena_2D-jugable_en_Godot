@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c4byrljq67xo"]
+
+[ext_resource type="Script" uid="uid://dvhjigypuxvcs" path="res://fin.gd" id="1_7gwgi"]
+
+[node name="Control" type="Control" unique_id=1740264462]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_7gwgi")
+
+[node name="Contenedor" type="VBoxContainer" parent="." unique_id=1715746099]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelGanador" type="Label" parent="Contenedor" unique_id=998806912]
+layout_mode = 2
+
+[node name="BtnRepetir" type="Button" parent="Contenedor" unique_id=2081293900]
+layout_mode = 2
+text = "Repetir"
+
+[node name="BtnMenu" type="Button" parent="Contenedor" unique_id=1132592881]
+layout_mode = 2
+text = "Menú Principal"
+
+[connection signal="pressed" from="Contenedor/BtnRepetir" to="." method="_on_btn_repetir_pressed"]
+[connection signal="pressed" from="Contenedor/BtnMenu" to="." method="_on_btn_menu_pressed"]

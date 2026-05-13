@@ -360,6 +360,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(22, 23)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr8wp"]
+size = Vector2(843, 34)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hxjc"]
 atlas = ExtResource("6_d21ai")
 region = Rect2(0, 0, 32, 32)
@@ -542,6 +545,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjlbh"]
 size = Vector2(21, 22)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2bti"]
+size = Vector2(168.60004, 6.8)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cjlbh"]
 atlas = ExtResource("8_rj586")
 region = Rect2(0, 0, 32, 32)
@@ -639,6 +645,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wqmsq"]
 size = Vector2(22, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta5nu"]
+size = Vector2(792, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m7xe6"]
 atlas = ExtResource("9_4d7sh")
@@ -822,12 +831,27 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j02gt"]
 size = Vector2(20, 26)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flf07"]
+size = Vector2(798, 36)
+
 [node name="Node2D" type="Node2D" unique_id=1063954120]
 position = Vector2(0, -1)
 script = ExtResource("1_0h7mo")
 
 [node name="Respawn_player1" type="Marker2D" parent="." unique_id=1044358798]
-position = Vector2(48, -124)
+position = Vector2(355, 137)
+gizmo_extents = 0.0
+
+[node name="Respawn_player2" type="Marker2D" parent="." unique_id=664513665]
+position = Vector2(537, 100)
+gizmo_extents = 0.0
+
+[node name="Respawn_player3" type="Marker2D" parent="." unique_id=1576179695]
+position = Vector2(725, 161)
+gizmo_extents = 0.0
+
+[node name="Respawn_player4" type="Marker2D" parent="." unique_id=1476534684]
+position = Vector2(906, 80)
 gizmo_extents = 0.0
 
 [node name="Blue" type="Sprite2D" parent="." unique_id=458099220]
@@ -839,57 +863,78 @@ texture = ExtResource("1_0e48y")
 tile_map_data = PackedByteArray("AAAhABQAAAAGAAAAAAAhABUAAAAGAAEAAAAhABYAAAAGAAIAAAAiABQAAAAHAAAAAAAiABUAAAAHAAEAAAAiABYAAAAHAAIAAAAjABQAAAAIAAAAAAAjABUAAAAIAAEAAAAjABYAAAAIAAIAAAAeABQAAAAGAAAAAAAeABUAAAAGAAEAAAAeABYAAAAGAAIAAAAfABQAAAAHAAAAAAAfABUAAAAHAAEAAAAfABYAAAAHAAIAAAAgABQAAAAIAAAAAAAgABUAAAAIAAEAAAAgABYAAAAIAAIAAAAbABQAAAAGAAAAAAAbABUAAAAGAAEAAAAbABYAAAAGAAIAAAAcABQAAAAHAAAAAAAcABUAAAAHAAEAAAAcABYAAAAHAAIAAAAdABQAAAAIAAAAAAAdABUAAAAIAAEAAAAdABYAAAAIAAIAAAAVABQAAAAGAAAAAAAVABUAAAAGAAEAAAAVABYAAAAGAAIAAAAWABQAAAAHAAAAAAAWABUAAAAHAAEAAAAWABYAAAAHAAIAAAAXABQAAAAIAAAAAAAXABUAAAAIAAEAAAAXABYAAAAIAAIAAAApABIAAAAGAAAAAAApABMAAAAGAAEAAAApABQAAAAGAAIAAAAqABIAAAAHAAAAAAAqABMAAAAHAAEAAAAqABQAAAAHAAIAAAArABIAAAAIAAAAAAArABMAAAAIAAEAAAArABQAAAAIAAIAAAAsABIAAAAGAAAAAAAsABMAAAAGAAEAAAAsABQAAAAGAAIAAAAtABIAAAAHAAAAAAAtABMAAAAHAAEAAAAtABQAAAAHAAIAAAAuABIAAAAIAAAAAAAuABMAAAAIAAEAAAAuABQAAAAIAAIAAAAbABEAAAAGAAAAAAAcABEAAAAHAAAAAAAdABEAAAAIAAAAAAAgABAAAAAGAAAAAAAhABAAAAAHAAAAAAAiABAAAAAIAAAAAAAlABIAAAAGAAAAAAAmABIAAAAHAAAAAAAnABIAAAAIAAAAAAAQABIAAAAGAAAAAAARABIAAAAHAAAAAAASABIAAAAIAAAAAAAxABUAAAAGAAAAAAAxABYAAAAGAAEAAAAxABcAAAAGAAIAAAAyABUAAAAHAAAAAAAyABYAAAAHAAEAAAAyABcAAAAHAAIAAAAzABUAAAAIAAAAAAAzABYAAAAIAAEAAAAzABcAAAAIAAIAAAA0ABUAAAAGAAAAAAA0ABYAAAAGAAEAAAA0ABcAAAAGAAIAAAA1ABUAAAAHAAAAAAA1ABYAAAAHAAEAAAA1ABcAAAAHAAIAAAA2ABUAAAAIAAAAAAA2ABYAAAAIAAEAAAA2ABcAAAAIAAIAAAA3ABUAAAAGAAAAAAA3ABYAAAAGAAEAAAA3ABcAAAAGAAIAAAA4ABUAAAAHAAAAAAA4ABYAAAAHAAEAAAA4ABcAAAAHAAIAAAA5ABUAAAAIAAAAAAA5ABYAAAAIAAEAAAA5ABcAAAAIAAIAAAA6ABUAAAAGAAAAAAA6ABYAAAAGAAEAAAA6ABcAAAAGAAIAAAA7ABUAAAAHAAAAAAA7ABYAAAAHAAEAAAA7ABcAAAAHAAIAAAA8ABUAAAAIAAAAAAA8ABYAAAAIAAEAAAA8ABcAAAAIAAIAAAAvAA8AAAAGAAAAAAAwAA8AAAAHAAAAAAAxAA8AAAAIAAAAAAA3ABIAAAAGAAAAAAA4ABIAAAAHAAAAAAA5ABIAAAAIAAAAAAAyABEAAAAGAAAAAAAzABEAAAAHAAAAAAA0ABEAAAAIAAAAAAASABQAAAAGAAAAAAASABUAAAAGAAEAAAASABYAAAAGAAIAAAATABQAAAAHAAAAAAATABUAAAAHAAEAAAATABYAAAAHAAIAAAAUABQAAAAIAAAAAAAUABUAAAAIAAEAAAAUABYAAAAIAAIAAAApAA4AAAAGAAAAAAAqAA4AAAAHAAAAAAArAA4AAAAIAAAAAAAmAA4AAAAGAAAAAAAnAA4AAAAHAAAAAAAoAA4AAAAIAAAAAAAsAA4AAAAHAAAAAAAlAA4AAAAHAAAAAAAVABAAAAAGAAAAAAAWABAAAAAHAAAAAAAXABAAAAAIAAAAAAA=")
 tile_set = SubResource("TileSet_q6r6c")
 
-[node name="player1" type="CharacterBody2D" parent="." unique_id=601899861]
-position = Vector2(139, -98)
+[node name="player1" type="CharacterBody2D" parent="." unique_id=601899861 groups=["jugadores"]]
+position = Vector2(612, 205)
 script = ExtResource("3_0hol4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player1" unique_id=494472612]
-position = Vector2(503, 298)
 sprite_frames = SubResource("SpriteFrames_flf07")
 animation = &"salto"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player1" unique_id=1826985620]
-position = Vector2(503, 301.5)
 shape = SubResource("RectangleShape2D_0hol4")
 
-[node name="player2" type="CharacterBody2D" parent="." unique_id=594772474]
+[node name="ZonaEmpuje" type="Area2D" parent="player1" unique_id=333202950]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player1/ZonaEmpuje" unique_id=602796319]
+position = Vector2(434, 0)
+shape = SubResource("RectangleShape2D_nr8wp")
+
+[node name="player2" type="CharacterBody2D" parent="." unique_id=594772474 groups=["jugadores"]]
+position = Vector2(611, 258)
 script = ExtResource("3_0hol4")
 player_id = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player2" unique_id=1104291299]
-position = Vector2(360, 229)
 sprite_frames = SubResource("SpriteFrames_lbrxf")
 animation = &"salto"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player2" unique_id=1313297211]
-position = Vector2(360.5, 232)
 shape = SubResource("RectangleShape2D_cjlbh")
 
-[node name="player3" type="CharacterBody2D" parent="." unique_id=1845409733]
+[node name="ZonaEmpuje" type="Area2D" parent="player2" unique_id=2031448960]
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player2/ZonaEmpuje" unique_id=2047742420]
+position = Vector2(86.49999, 0.20000076)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_d2bti")
+
+[node name="player3" type="CharacterBody2D" parent="." unique_id=1845409733 groups=["jugadores"]]
+position = Vector2(806, 316)
 script = ExtResource("3_0hol4")
 player_id = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player3" unique_id=1568058167]
-position = Vector2(826, 254)
 sprite_frames = SubResource("SpriteFrames_m7xe6")
-animation = &"salto"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player3" unique_id=2133477987]
-position = Vector2(826, 258)
 shape = SubResource("RectangleShape2D_wqmsq")
 
-[node name="player4" type="CharacterBody2D" parent="." unique_id=1158527069]
+[node name="ZonaEmpuje" type="Area2D" parent="player3" unique_id=1087010889]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player3/ZonaEmpuje" unique_id=1339496014]
+position = Vector2(409, 0)
+shape = SubResource("RectangleShape2D_ta5nu")
+
+[node name="player4" type="CharacterBody2D" parent="." unique_id=1158527069 groups=["jugadores"]]
+position = Vector2(802, 141)
 script = ExtResource("3_0hol4")
 player_id = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player4" unique_id=1675344580]
-position = Vector2(455, 255)
 sprite_frames = SubResource("SpriteFrames_5fipt")
 animation = &"salto"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player4" unique_id=317717390]
-position = Vector2(456, 257)
 shape = SubResource("RectangleShape2D_j02gt")
+
+[node name="ZonaEmpuje" type="Area2D" parent="player4" unique_id=1946143989]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player4/ZonaEmpuje" unique_id=1891485366]
+position = Vector2(410, 0)
+shape = SubResource("RectangleShape2D_flf07")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1332875572]
 stream = ExtResource("11_hqns4")
