@@ -32,8 +32,6 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	var direction := Input.get_axis(accion_izquierda, accion_derecha)
-
-	# Un solo cálculo de velocity.x que tiene en cuenta input y empuje
 	velocity.x = direction * SPEED + empuje_recibido
 	empuje_recibido = 0.0
 
@@ -54,6 +52,7 @@ func _physics_process(delta: float) -> void:
 
 	_aplicar_empuje()
 	move_and_slide()
+	_comprobar_colision_caja()
 
 	if global_position.y > 750:
 		perder_vida()
@@ -68,15 +67,20 @@ func _aplicar_empuje() -> void:
 			var resistiendo = (mirando_derecha and cuerpo.empuje_recibido + cuerpo.velocity.x < 0) or (not mirando_derecha and cuerpo.empuje_recibido + cuerpo.velocity.x > 0)
 			cuerpo.empuje_recibido = fuerza
 
+func _comprobar_colision_caja() -> void:
+	for i in get_slide_collision_count():
+		var col = get_slide_collision(i)
+		var collider = col.get_collider()
+		if collider and collider.has_method("activar"):
+			collider.activar(self)
+
 func perder_vida() -> void:
 	vidas -= 1
 	global_position = current_respawn_position
 	velocity = Vector2.ZERO
 	empuje_recibido = 0.0
-
 	var hud = get_tree().get_first_node_in_group("hud")
 	if hud:
 		hud.actualizar_vidas(player_id, vidas)
-
 	if vidas <= 0:
 		queue_free()

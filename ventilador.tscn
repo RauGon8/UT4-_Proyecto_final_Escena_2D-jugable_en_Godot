@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dl5p18e45dil"]
+
+[ext_resource type="Script" uid="uid://dh5op6eo3j4xy" path="res://ventilador.gd" id="1_q7epf"]
+[ext_resource type="Texture2D" uid="uid://daghboccuqfjh" path="res://Pixel Adventure 1/Free/Traps/Fan/On (24x8).png" id="2_jlm0g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qepho"]
+size = Vector2(24, 645)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyq2d"]
+atlas = ExtResource("2_jlm0g")
+region = Rect2(0, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds5at"]
+atlas = ExtResource("2_jlm0g")
+region = Rect2(24, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtht1"]
+atlas = ExtResource("2_jlm0g")
+region = Rect2(48, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xn8p"]
+atlas = ExtResource("2_jlm0g")
+region = Rect2(72, 0, 24, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s3vky"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyq2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds5at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtht1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xn8p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=1390331334]
+script = ExtResource("1_q7epf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1381377031]
+position = Vector2(0, -318.5)
+shape = SubResource("RectangleShape2D_qepho")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1287393633]
+sprite_frames = SubResource("SpriteFrames_s3vky")
+frame = 1
+frame_progress = 0.87202644
